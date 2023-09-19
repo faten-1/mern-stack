@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const AddProduct = (prop) => {
+const AddProduct = (props) => {
 
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState(0)
     const [description, setDescription] = useState('')
+
+    const {refresh} = props 
 
     const SubmitHandler = (e) => {
         e.preventDefault()
@@ -20,6 +22,7 @@ const AddProduct = (prop) => {
                 setTitle("")
                 setPrice(0)
                 setDescription("")
+                refresh()
             })
             .catch (err => {console.log(err)})
     }

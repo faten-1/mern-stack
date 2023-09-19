@@ -1,13 +1,16 @@
 import './App.css';
 import {Routes,Route} from 'react-router-dom'
-import AddProduct from './components/AddProduct';
+import Main from './Views/Main';
+import OneProductDisplay from './components/OneProductDisplay';
+
 
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path = "/" element ={< AddProduct />} />
+        <Route path = "/" element ={< Main />} />
+        <Route path = "/product/:id" element ={< OneProductDisplay />} />
       </Routes>
     </div>
   );
